@@ -1,0 +1,13 @@
+<div class='page-header'>
+  <div class='btn-toolbar pull-right'>
+    <div class='btn-group'>
+      <a href="/tasks/new" class="btn btn-info" role="button">+ New Task</a>
+    </div>
+  </div>
+  <h2>Tasks Assigned</h2>
+</div>
+<ul class="list-group">
+  <% @tasks.each do |task|%>
+    <li class="list-group-item"><%= task&.name%></li>
+  <%end%>
+</ul>
