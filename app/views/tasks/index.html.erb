@@ -6,8 +6,10 @@
   </div>
   <h2>Tasks Assigned</h2>
 </div>
-<ul class="list-group">
+<ul id="tasks" class="list-group" data-url="<%= sort_tasks_path%>">
   <% @tasks.each do |task|%>
-    <li class="list-group-item"><%= task&.name%></li>
+    <li class="list-group-item" id="<%= dom_id(task) %>">
+    <%= check_box_tag("name", "0", task&.task_completed, class: "taskCheckbox") %> <%= task&.name %>
+    </li>
   <%end%>
 </ul>
